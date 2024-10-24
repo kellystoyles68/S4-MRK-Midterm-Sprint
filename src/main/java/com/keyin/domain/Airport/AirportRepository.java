@@ -1,5 +1,6 @@
-package com.keyin.domain.Airport;
+package com.keyin.domain;
 
+import com.keyin.domain.Airport;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
