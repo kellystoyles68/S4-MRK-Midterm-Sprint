@@ -1,5 +1,7 @@
-package com.keyin.domain;
+package com.keyin.domain.Passenger;
 
+import com.keyin.domain.Aircraft.Aircraft;
+import com.keyin.domain.City.City;
 import jakarta.persistence.*;
 import java.util.List;
 

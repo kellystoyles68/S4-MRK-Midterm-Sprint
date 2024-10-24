@@ -1,4 +1,4 @@
-package com.keyin.domain;
+package com.keyin.domain.Airport;
 
 
 import org.springframework.boot.SpringApplication;
