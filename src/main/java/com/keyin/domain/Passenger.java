@@ -3,10 +3,13 @@ package com.keyin.domain;
 import jakarta.persistence.*;
 import java.util.List;
 
-
 @Entity
 public class Passenger {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long passengerId;
+
     private String firstName;
     private String lastName;
     private String email;
@@ -14,12 +17,22 @@ public class Passenger {
 
     @ManyToOne
     @JoinColumn(name = "cityId")
-    private City cityId;
+    private City city;
 
     @ManyToMany
+    @JoinTable(
+            name = "passenger_aircraft",
+            joinColumns = @JoinColumn(name = "passenger_id"),
+            inverseJoinColumns = @JoinColumn(name = "aircraft_id")
+    )
     private List<Aircraft> aircraft;
 
-    public Passenger (Long passengerId, String firstName, String lastName, String email, String phoneNumber){
+    // No-args constructor for JPA
+    public Passenger() {
+    }
+
+    // Constructor with parameters
+    public Passenger(Long passengerId, String firstName, String lastName, String email, String phoneNumber) {
         this.passengerId = passengerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,12 +40,12 @@ public class Passenger {
         this.phoneNumber = phoneNumber;
     }
 
-
-    public long getpassengerId() {
+    // Corrected getter method name
+    public Long getPassengerId() {
         return passengerId;
     }
 
-    public void setpassengerId(long passengerId) {
+    public void setPassengerId(Long passengerId) {
         this.passengerId = passengerId;
     }
 
@@ -66,5 +79,21 @@ public class Passenger {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public List<Aircraft> getAircraft() {
+        return aircraft;
+    }
+
+    public void setAircraft(List<Aircraft> aircraft) {
+        this.aircraft = aircraft;
     }
 }

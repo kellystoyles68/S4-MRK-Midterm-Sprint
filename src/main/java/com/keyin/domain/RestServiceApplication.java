@@ -1,12 +1,14 @@
-package com.keyin.domain.Airport;
+package com.keyin.domain;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AirportServerApplication {
+public class RestServiceApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(AirportServerApplication.class, args);
+        SpringApplication.run(RestServiceApplication.class, args);
     }
 }
+
