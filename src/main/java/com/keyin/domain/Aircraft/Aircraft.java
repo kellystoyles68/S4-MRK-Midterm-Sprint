@@ -1,6 +1,5 @@
-package com.keyin.domain.Aircraft;
+package com.keyin.domain;
 
-import com.keyin.domain.Airport.Airport;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -42,13 +41,13 @@ public class Aircraft {
     }
 
 
-    public long getaircraftId() {
+   /* public long getaircraftId() {
         return aircraftId;
     }
 
     public void setaircraftId(long aircraftId) {
         Aircraft.aircraftId = aircraftId;
-    }
+    }*/
 
     public String getAirline() {
         return airline;
