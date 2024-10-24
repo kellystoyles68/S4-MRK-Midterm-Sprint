@@ -26,7 +26,7 @@ public class City {
         this.city_pop = city_pop;
         City.province_pop = province_pop;
 
-    }
+}
 
     public static void province() {
     }
@@ -82,3 +82,4 @@ public class City {
         this.province_pop = province_pop;
     }
 }
+
