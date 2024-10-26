@@ -1,8 +1,10 @@
 package com.keyin.domain.Airport;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.keyin.domain.Aircraft.Aircraft;
 import com.keyin.domain.City.City;
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,35 +15,38 @@ public class Airport {
     private Long airportId;
 
     private String name;
-    private String IATA_code;  // Removed static
+    private String IATA_code;
 
     @ManyToOne
-    @JoinColumn(name = "cityId")
+    @JoinColumn(name = "cityId", nullable = false) // Set nullable as per your business logic
+    @JsonIgnore // Prevent recursive serialization
+
     private City city;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL) // Adjust as necessary
     @JoinTable(
             name = "airport_aircraft",
             joinColumns = @JoinColumn(name = "airport_id"),
             inverseJoinColumns = @JoinColumn(name = "aircraft_id")
     )
-    private List<Aircraft> aircraft;
+    private List<Aircraft> aircraft = new ArrayList<>(); // Initialize to avoid NullPointerException
 
-    // No-args constructor
+    // Constructors
     public Airport() {
     }
 
-    public Airport(Long airportId, String name, String IATA_code) {
-        this.airportId = airportId;
+    public Airport(String name, String IATA_code, City city) {
         this.name = name;
         this.IATA_code = IATA_code;
+        this.city = city;
     }
 
-    public long getAirportId() {
+    // Getters and Setters
+    public Long getAirportId() {
         return airportId;
     }
 
-    public void setAirportId(long airportId) {
+    public void setAirportId(Long airportId) {
         this.airportId = airportId;
     }
 
