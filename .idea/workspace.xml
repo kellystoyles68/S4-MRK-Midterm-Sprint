@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3dea507-29ef-4ecf-849c-620ec41dd9b1" name="Changes" comment="Got airport api path set up in rest api.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerService.java" afterDir="false" />
+    <list default="true" id="d3dea507-29ef-4ecf-849c-620ec41dd9b1" name="Changes" comment="Got server running again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport/AirportServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/AirportServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/AirportServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/AirportServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="REST" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,12 +36,12 @@
     &quot;assignee&quot;: &quot;joy111joy&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/joy111joy/S4-MRK-Midterm-Sprint",
-    "accountId": "9b699992-c751-4886-880c-1d0b559c848f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joy111joy/S4-MRK-Midterm-Sprint&quot;,
+    &quot;accountId&quot;: &quot;9b699992-c751-4886-880c-1d0b559c848f&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -66,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AirportServerApplication.executor": "Run",
-    "git-widget-placeholder": "REST",
+    "git-widget-placeholder": "mDNS__Test",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -79,10 +73,17 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="AirportServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="S4-MRK-Midterm-Sprint" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.domain.AirportServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AirportServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="S4-MRK-Midterm-Sprint" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.domain.AirportServerApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.domain.Airport.AirportServerApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729656785437</updated>
       <workItem from="1729656786398" duration="1293000" />
-      <workItem from="1729808246414" duration="13303000" />
+      <workItem from="1729808246414" duration="6692000" />
     </task>
     <task id="LOCAL-00001" summary="Init Commit">
       <option name="closed" value="true" />
@@ -123,15 +124,7 @@
       <option name="project" value="LOCAL" />
       <updated>1729808863760</updated>
     </task>
-    <task id="LOCAL-00003" summary="Got airport api path set up in rest api.">
-      <option name="closed" value="true" />
-      <created>1729922357285</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1729922357285</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,14 +144,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init Commit" />
     <MESSAGE value="Got server running again" />
-    <MESSAGE value="Got airport api path set up in rest api." />
-    <option name="LAST_COMMIT_MESSAGE" value="Got airport api path set up in rest api." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got server running again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/keyin/domain/AirportServerApplication.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/keyin/domain/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport/AirportServerApplication.java</url>
           <line>8</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
