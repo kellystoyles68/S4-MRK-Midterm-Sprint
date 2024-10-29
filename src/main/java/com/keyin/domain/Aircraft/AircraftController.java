@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/aircraft")
@@ -35,9 +36,15 @@ public class AircraftController {
         return aircraftService.addAircraft(aircraft);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/api/aircraft/{id}")
     public ResponseEntity<Void> deleteAircraft(@PathVariable Long id) {
-        aircraftService.deleteAircraft(id);
-        return ResponseEntity.noContent().build();
+        Optional<Aircraft> aircraft = aircraftService.getAircraftById(id);
+        if (aircraft.isPresent()) {
+            aircraftService.deleteAircraft(id);
+            return ResponseEntity.noContent().build();  // 204 No Content for successful deletion
+        } else {
+            return ResponseEntity.notFound().build();  // 404 Not Found if the aircraft doesn't exist
+        }
     }
+
 }
