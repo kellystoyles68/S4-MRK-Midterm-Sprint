@@ -4,36 +4,40 @@ import com.keyin.domain.Airport.Airport;
 import com.keyin.domain.Passenger.Passenger;
 import jakarta.persistence.*;
 import java.util.List;
+import java.time.LocalDate;
 
 @Entity
 public class Aircraft {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long aircraftId;  // Use Long instead of long for JPA compatibility
+    private Long aircraftId;
     private String airline;
     private String model;
     private int capacity;
+    private LocalDate lastServiceDate;
+    private boolean active;
 
-    @ManyToMany(mappedBy = "aircraft") // Change to match the field name in Passenger
+    @ManyToMany(mappedBy = "aircraft")
     private List<Passenger> passengers;
 
-    @ManyToMany(mappedBy = "aircraft") // Change to match the field name in Airport if applicable
+    @ManyToMany(mappedBy = "aircraft")
     private List<Airport> airports;
 
-    // No-args constructor for JPA
+
     public Aircraft() {
     }
 
-    // Constructor with parameters
-    public Aircraft(Long aircraftId, String airline, String model, int capacity) {
+    public Aircraft(Long aircraftId, String airline, String model, int capacity,  LocalDate lastServiceDate, boolean active) {
         this.aircraftId = aircraftId;
         this.airline = airline;
         this.model = model;
         this.capacity = capacity;
+        this.lastServiceDate = LocalDate.now();
+        this.active = true;
     }
 
     public Long getAircraftId() {
-        return aircraftId;  // Return type should match the field type
+        return aircraftId;
     }
 
     public void setAircraftId(Long aircraftId) {
@@ -64,20 +68,20 @@ public class Aircraft {
         this.capacity = capacity;
     }
 
-    // Optional: Getters and Setters for passengers and airports
-    public List<Passenger> getPassengers() {
-        return passengers;
+    public LocalDate getLastServiceDate() {
+        return lastServiceDate;
     }
 
-    public void setPassengers(List<Passenger> passengers) {
-        this.passengers = passengers;
+    public void setLastServiceDate(LocalDate lastServiceDate) {
+        this.lastServiceDate = lastServiceDate;
     }
 
-    public List<Airport> getAirports() {
-        return airports;
+    private boolean isActive() {
+        return active;
     }
 
-    public void setAirports(List<Airport> airports) {
-        this.airports = airports;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
+
