@@ -22,11 +22,11 @@ public class Passenger {
     private City city;
 
     @ManyToMany
-    @JoinTable(
-            name = "passenger_aircraft",
-            joinColumns = @JoinColumn(name = "passenger_id"),
-            inverseJoinColumns = @JoinColumn(name = "aircraft_id")
-    )
+//    @JoinTable(
+//            name = "passenger_aircraft",
+//            joinColumns = @JoinColumn(name = "passenger_id"),
+//            inverseJoinColumns = @JoinColumn(name = "aircraft_id")
+//    )
     private List<Aircraft> aircraft;
 
     // No-args constructor for JPA

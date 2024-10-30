@@ -1,38 +1,40 @@
 package com.keyin.domain.City;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.keyin.domain.Airport.Airport;
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class City {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cityId;
 
-    private String name;
-    private String city;
-    private String province;  // Removed static
-    private int city_pop;
-    private int province_pop;  // Removed static
+    private String name;  // City name
+    private String province; // Province name
+    private int cityPopulation;
+    private int provincePopulation;
 
-    @OneToMany(mappedBy = "city")  // Changed to match the field in Airport
-    private List<Airport> airports;
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL) // Cascade if needed
+    @JsonManagedReference // Manage the serialization of the relationship
 
-    // No-args constructor
+    private List<Airport> airports = new ArrayList<>(); // Initialize to avoid NullPointerException
+
+    // Constructors
     public City() {
     }
 
-    public City(Long cityId, String name, String city, String province, int city_pop, int province_pop) {
-        this.cityId = cityId;
+    public City(String name, String province, int cityPopulation, int provincePopulation) {
         this.name = name;
-        this.city = city;
-        this.province = province;  // Changed to instance variable
-        this.city_pop = city_pop;
-        this.province_pop = province_pop;  // Changed to instance variable
+        this.province = province;
+        this.cityPopulation = cityPopulation;
+        this.provincePopulation = provincePopulation;
     }
 
-    // Corrected method name
+    // Getters and Setters
     public Long getCityId() {
         return cityId;
     }
@@ -49,36 +51,28 @@ public class City {
         this.name = name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
     public String getProvince() {
         return province;
     }
 
     public void setProvince(String province) {
-        this.province = province;  // Changed to instance variable
+        this.province = province;
     }
 
-    public int getCity_pop() {
-        return city_pop;
+    public int getCityPopulation() {
+        return cityPopulation;
     }
 
-    public void setCity_pop(int city_pop) {
-        this.city_pop = city_pop;
+    public void setCityPopulation(int cityPopulation) {
+        this.cityPopulation = cityPopulation;
     }
 
-    public int getProvince_pop() {
-        return province_pop;
+    public int getProvincePopulation() {
+        return provincePopulation;
     }
 
-    public void setProvince_pop(int province_pop) {
-        this.province_pop = province_pop;  // Changed to instance variable
+    public void setProvincePopulation(int provincePopulation) {
+        this.provincePopulation = provincePopulation;
     }
 
     public List<Airport> getAirports() {
