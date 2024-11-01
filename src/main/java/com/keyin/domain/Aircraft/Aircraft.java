@@ -15,7 +15,6 @@ public class Aircraft {
     private String model;
     private int capacity;
     private LocalDate lastServiceDate;
-    private boolean active;
 
     @ManyToMany(mappedBy = "aircraft")
     private List<Passenger> passengers;
@@ -27,13 +26,11 @@ public class Aircraft {
     public Aircraft() {
     }
 
-    public Aircraft(Long aircraftId, String airline, String model, int capacity,  LocalDate lastServiceDate, boolean active) {
-        this.aircraftId = aircraftId;
-        this.airline = airline;
-        this.model = model;
-        this.capacity = capacity;
-        this.lastServiceDate = LocalDate.now();
-        this.active = true;
+    @Enumerated(EnumType.STRING)
+    private AircraftStatus status;
+
+    public enum AircraftStatus {
+        ACTIVE, DECOMMISSIONED, SOLD
     }
 
     public Long getAircraftId() {
@@ -76,12 +73,22 @@ public class Aircraft {
         this.lastServiceDate = lastServiceDate;
     }
 
-    private boolean isActive() {
-        return active;
+    private  AircraftStatus getStatus () {
+        return status;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setStatus(AircraftStatus status) {
+        this.status = status;
     }
+
+    public Aircraft(Long aircraftId, String airline, String model, int capacity,  LocalDate lastServiceDate, AircraftStatus status ) {
+        this.aircraftId = aircraftId;
+        this.airline = airline;
+        this.model = model;
+        this.capacity = capacity;
+        this.lastServiceDate = lastServiceDate;
+        this.status = status;
+    }
+
 }
 

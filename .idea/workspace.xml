@@ -142,4 +142,15 @@
     <MESSAGE value="mDNS working. Connection between machines on same network" />
     <option name="LAST_COMMIT_MESSAGE" value="mDNS working. Connection between machines on same network" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/Passenger.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

@@ -53,4 +53,14 @@ public class AircraftService {
             aircraftRepository.save(aircraft);
         }
     }
+
+    public Aircraft updateAircraftStatus(Long id, Aircraft.AircraftStatus status) {
+        Optional<Aircraft> optionalAircraft = aircraftRepository.findById(id);
+        if (optionalAircraft.isPresent()) {
+            Aircraft aircraft = optionalAircraft.get();
+            aircraft.setStatus(status);
+            return aircraftRepository.save(aircraft);
+        }
+        return null; // Or throw an exception
+    }
 }
