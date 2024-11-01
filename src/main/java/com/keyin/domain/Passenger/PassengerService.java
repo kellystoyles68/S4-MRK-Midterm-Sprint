@@ -17,19 +17,15 @@ public class PassengerService {
         this.passengerRepository = passengerRepository;
     }
 
-    public List<Passenger> getAllPassenger() {
-        return passengerRepository.findAll();
-    }
-
-    public Optional<Passenger> getPassengerById(Long id) {
-        return passengerRepository.findById(id);
-    }
-
     public Passenger addPassenger(Passenger passenger) {
         return passengerRepository.save(passenger);
     }
 
     public void deletePassenger(Long id) {
         passengerRepository.deleteById(id);
+    }
+
+    public Long getPassengerCountForAirport(String airportCode) {
+        return passengerRepository.PassengerCountForAirport(airportCode);
     }
 }

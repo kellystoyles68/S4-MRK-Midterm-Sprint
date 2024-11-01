@@ -17,7 +17,7 @@ public class AircraftService {
         this.aircraftRepository = aircraftRepository;
     }
 
-    public List<Aircraft> getAllAircrafts() {
+    public List<Aircraft> getAllAircraft() {
         return aircraftRepository.findAll();
     }
 
@@ -54,7 +54,7 @@ public class AircraftService {
         }
     }
 
-    public Aircraft updateAircraftStatus(Long id, Aircraft.AircraftStatus status) {
+    public Aircraft updateAircraftStatus(Long id, String status) {
         Optional<Aircraft> optionalAircraft = aircraftRepository.findById(id);
         if (optionalAircraft.isPresent()) {
             Aircraft aircraft = optionalAircraft.get();

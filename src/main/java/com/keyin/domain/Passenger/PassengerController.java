@@ -17,16 +17,22 @@ public class PassengerController {
         this.passengerService = passengerService;
     }
 
-    @GetMapping
-    public List<Passenger> getAllPassenger() {
-        return passengerService.getAllPassenger();
-    }
+   // @GetMapping
+   // public List<Passenger> getAllPassenger() {
+   //     return passengerService.getAllPassenger();
+   // }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Passenger> getAircraftById(@PathVariable Long id) {
-        return passengerService.getPassengerById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+  //  @GetMapping("/{id}")
+   // public ResponseEntity<Passenger> getAircraftById(@PathVariable //Long id) {
+    //    return passengerService.getPassengerById(id)
+    //            .map(ResponseEntity::ok)
+    //            .orElse(ResponseEntity.notFound().build());
+   // }
+
+    @GetMapping("/count/{airportCode}")
+    public ResponseEntity<Long> getPassengerCountForAirport(@PathVariable String airportCode) {
+        Long count = passengerService.getPassengerCountForAirport(airportCode);
+        return ResponseEntity.ok(count);
     }
 
     @PostMapping
@@ -35,7 +41,7 @@ public class PassengerController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCity(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePassenger(@PathVariable Long id) {
         passengerService.deletePassenger(id);
         return ResponseEntity.noContent().build();
     }

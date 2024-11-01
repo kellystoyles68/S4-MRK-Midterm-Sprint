@@ -21,7 +21,7 @@ public class AircraftController {
 
     @GetMapping
     public List<Aircraft> getAllAircraft() {
-        return aircraftService.getAllAircrafts();
+        return aircraftService.getAllAircraft();
     }
 
     @GetMapping("/{id}")
@@ -44,6 +44,16 @@ public class AircraftController {
             return ResponseEntity.noContent().build();  // 204 No Content for successful deletion
         } else {
             return ResponseEntity.notFound().build();  // 404 Not Found if the aircraft doesn't exist
+        }
+    }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<Aircraft> updateAircraftStatus(@PathVariable Long id, @RequestBody String status) {
+        Aircraft updatedAircraft = aircraftService.updateAircraftStatus(id, status);
+        if (updatedAircraft != null) {
+            return ResponseEntity.ok(updatedAircraft);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 

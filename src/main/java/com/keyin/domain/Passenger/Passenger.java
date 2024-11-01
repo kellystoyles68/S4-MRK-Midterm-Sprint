@@ -3,6 +3,9 @@ package com.keyin.domain.Passenger;
 import com.keyin.domain.Aircraft.Aircraft;
 import com.keyin.domain.City.City;
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import java.util.List;
 
 @Entity
@@ -97,4 +100,6 @@ public class Passenger {
     public void setAircraft(List<Aircraft> aircraft) {
         this.aircraft = aircraft;
     }
+
+
 }

@@ -1,9 +1,7 @@
 package com.keyin.domain.Aircraft;
 
-import com.keyin.domain.Airport.Airport;
-import com.keyin.domain.Passenger.Passenger;
+
 import jakarta.persistence.*;
-import java.util.List;
 import java.time.LocalDate;
 
 @Entity
@@ -15,23 +13,10 @@ public class Aircraft {
     private String model;
     private int capacity;
     private LocalDate lastServiceDate;
-
-    @ManyToMany(mappedBy = "aircraft")
-    private List<Passenger> passengers;
-
-    @ManyToMany(mappedBy = "aircraft")
-    private List<Airport> airports;
+    private String status;
 
 
-    public Aircraft() {
-    }
 
-    @Enumerated(EnumType.STRING)
-    private AircraftStatus status;
-
-    public enum AircraftStatus {
-        ACTIVE, DECOMMISSIONED, SOLD
-    }
 
     public Long getAircraftId() {
         return aircraftId;
@@ -65,6 +50,8 @@ public class Aircraft {
         this.capacity = capacity;
     }
 
+
+
     public LocalDate getLastServiceDate() {
         return lastServiceDate;
     }
@@ -73,22 +60,23 @@ public class Aircraft {
         this.lastServiceDate = lastServiceDate;
     }
 
-    private  AircraftStatus getStatus () {
+    private String getStatus () {
         return status;
     }
 
-    public void setStatus(AircraftStatus status) {
+    public void setStatus(String status) {
+        if (isValidStatus(status)) {
         this.status = status;
+    } else {
+        throw new IllegalArgumentException("Invalid status: " + status);
+    }
     }
 
-    public Aircraft(Long aircraftId, String airline, String model, int capacity,  LocalDate lastServiceDate, AircraftStatus status ) {
-        this.aircraftId = aircraftId;
-        this.airline = airline;
-        this.model = model;
-        this.capacity = capacity;
-        this.lastServiceDate = lastServiceDate;
-        this.status = status;
-    }
-
+    private boolean isValidStatus(String status) {
+    return status != null && (status.equals("ACTIVE") ||
+            status.equals("DECOMMISSIONED") || status.equals("SOLD"));
 }
+}
+
+
 

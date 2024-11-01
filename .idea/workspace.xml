@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3dea507-29ef-4ecf-849c-620ec41dd9b1" name="Changes" comment="mDNS working. Connection between machines on same network" />
+    <list default="true" id="d3dea507-29ef-4ecf-849c-620ec41dd9b1" name="Changes" comment="mDNS working. Connection between machines on same network">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/Aircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Aircraft/AircraftService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport/AirportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Airport/AirportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/City/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/PassengerService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AirportServerApplication.executor": "Run",
+    "git-widget-placeholder": "ppassenger__data",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -63,11 +77,24 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/mitcheljoy/IdeaProjects/S4-MRK-Midterm-Sprint/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AirportServerApplication">
+    <configuration name="AirportServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.keyin.domain.AirportServerApplication" />
+      <module name="S4-MRK-Midterm-Sprint" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AirportServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="S4-MRK-Midterm-Sprint" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.domain.AirportServerApplication" />
@@ -83,6 +110,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AirportServerApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -147,7 +179,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/keyin/domain/Passenger/Passenger.java</url>
-          <line>7</line>
+          <line>10</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
